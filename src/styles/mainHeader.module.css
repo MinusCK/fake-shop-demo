@@ -1,0 +1,21 @@
+.mainHeader {
+  background-color: bisque;
+  padding: 5px 0;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.eachButton {
+  margin-right: 5px;
+  border: 1px solid #c3c3c3;
+  background-color: rgb(85, 85, 85);
+}
+
+.eachButton:hover {
+  background-color: white;
+  border: 1px solid #c3c3c3;
+  color: rgb(85, 85, 85);
+}

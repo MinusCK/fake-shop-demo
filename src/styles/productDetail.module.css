@@ -1,0 +1,13 @@
+.lineTop {
+  width: 100%;
+
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-top: solid #acc0d8 2px;
+}
+
+.quantityBtnSet {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

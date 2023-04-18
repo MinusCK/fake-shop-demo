@@ -1,0 +1,8 @@
+.navBar {
+  background-color: rgba(121, 151, 249, 0.517);
+}
+
+.menuPart {
+  display: flex;
+  justify-content: end;
+}
