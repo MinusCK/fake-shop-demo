@@ -2,7 +2,6 @@ import { Button, Container, Offcanvas } from "react-bootstrap";
 import styles from "@/styles/mainHeader.module.css";
 import { useState } from "react";
 import { Cart } from "react-bootstrap-icons";
-import LoginPage from "@/pages/login";
 import Link from "next/link";
 
 export default function MainHeader() {
@@ -30,6 +29,7 @@ export default function MainHeader() {
           Message
         </Button>
       </div>
+
       <Offcanvas show={show} onHide={handleClose} placement={"end"}>
         <Offcanvas.Header closeButton className={styles.OffcanvasTitle}>
           <Offcanvas.Title>Shopping Cart</Offcanvas.Title>

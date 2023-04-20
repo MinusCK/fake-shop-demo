@@ -8,6 +8,7 @@ import { Plus, Dash } from "react-bootstrap-icons";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 import Head from "next/head";
+import Link from "next/link";
 
 const ProductDetail = ({
   selectProduct,
@@ -20,6 +21,47 @@ const ProductDetail = ({
   };
   const handleMinusQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
+  };
+  const nameTag = selectProduct[0][0];
+  console.log(nameTag);
+  const handleTag = () => {
+    switch (nameTag) {
+      case "shf":
+        return (
+          <Link href={`/categorie/${nameTag}`} className={styles.link}>
+            <div
+              className={styles.cTag}
+              style={{ backgroundColor: "rgb(212, 64, 64)" }}
+            >
+              S.H.Figuarts
+            </div>
+          </Link>
+        );
+        break;
+      case "metalbuild":
+        return (
+          <Link href={`/categorie/${nameTag}`} className={styles.link}>
+            <div
+              className={styles.cTag}
+              style={{ backgroundColor: "rgb(50, 80, 214)" }}
+            >
+              Metal Build
+            </div>
+          </Link>
+        );
+        break;
+      case "nendoroid":
+        return (
+          <Link href={`/categorie/${nameTag}`} className={styles.link}>
+            <div
+              className={styles.cTag}
+              style={{ backgroundColor: "rgb(225, 219, 115)" }}
+            >
+              Nendoroid
+            </div>
+          </Link>
+        );
+    }
   };
   return (
     <Container fluid>
@@ -38,10 +80,15 @@ const ProductDetail = ({
         </Col>
         <Col sm={12} md={6}>
           <h1>{selectProduct[3]}</h1>
-          <div>Price:{selectProduct[4]}</div>
-          <div>Arrived Date:</div>
+          <div style={{ display: "flex" }}>
+            {handleTag()}
+            <div style={{ flex: "1" }}></div>
+          </div>
+          <br />
 
-          <div>{selectProduct[4]}</div>
+          <div style={{ fontSize: "20px" }}>Price:{selectProduct[4]}</div>
+          <div>Arrived Date: N/A</div>
+          <br />
           <div>
             <div>QUANTITY</div>
             <div className={styles.quantityBtnSet}>
@@ -148,16 +195,7 @@ export const getStaticProps = async (context: { params: any }) => {
     `https://nextjs-shop-data-default-rtdb.firebaseio.com/products/${productId}.json`
   );
   const data = await response.json();
-  console.log(data);
   const product = Object.keys(data).map((key) => [data[key]]);
-  //   const product = [];
-
-  //   for (const key in data) {
-  //     product.push({
-  //       id: key,
-  //       ...data[key],
-  //     });
-  //   }
   return {
     props: {
       selectProduct: product,

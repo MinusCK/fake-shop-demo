@@ -20,7 +20,7 @@ export default function Home(props: { allProduct: any }) {
   const nenProducts = props.allProduct.filter(
     (product: { categories: string }) => product.categories === "nendoroid"
   );
-  // console.log(filteredProducts);
+
   return (
     <Container fluid>
       <div className={styles.homeLayout}>

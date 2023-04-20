@@ -8,8 +8,6 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 const ProductCardHome = (props: { data: any }) => {
-  console.log(props.data);
-
   return (
     <Col sm={6} md={4} xl={2} className={styles.cardRow}>
       <Link href={`/product/${props.data.id}`} className={styles.link}>

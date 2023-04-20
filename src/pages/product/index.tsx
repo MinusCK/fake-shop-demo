@@ -11,8 +11,6 @@ import Head from "next/head";
 // }
 
 const AllProductPage = (props: { allProduct: any }) => {
-  getAllPruduct();
-  console.log(props.allProduct);
   const product = props.allProduct;
 
   return (

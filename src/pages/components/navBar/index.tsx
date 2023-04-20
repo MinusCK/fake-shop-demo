@@ -10,8 +10,6 @@ import logo from "../../assets/images/logo-01.png";
 import Image from "next/image";
 import classNames from "classnames";
 const NavBar = (props: { categories: any }) => {
-  // console.log(props.categories);
-
   return (
     <div className={styles.navLayout}>
       <Navbar.Brand href="/">

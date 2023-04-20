@@ -11,7 +11,6 @@ import { Container, Row } from "react-bootstrap";
 const CategoreDetail = (props: { filProduct: any; categorie: any }, {}) => {
   const router = useRouter();
   const [categorie, setCategorie] = useState("");
-  console.log(props.categorie);
 
   useEffect(() => {
     const name = router.query.categorieId;
@@ -21,8 +20,6 @@ const CategoreDetail = (props: { filProduct: any; categorie: any }, {}) => {
     );
     if (categorieData) {
       setCategorie(categorieData.name);
-    } else {
-      console.log("erroe");
     }
   }, [categorie]);
 
@@ -68,15 +65,6 @@ export const getStaticProps = async (context: { params: any }) => {
   const categorieId = context.params.categorieId;
   const fproduct = await getCategoriesProduct(categorieId);
   const categorie = await getCategories();
-  // const products = await getAllPruduct();
-  // const filterProducts = products.filter(
-  //   (product: { categories: string }) => product.categories === categorieId
-  // );
-  // const product = Object.keys(filterProducts).map((key: any) => [
-  //   filterProducts[key],
-  // ]);
-  // const filteredArray = [...filterProducts];
-
   return {
     props: {
       filProduct: fproduct,

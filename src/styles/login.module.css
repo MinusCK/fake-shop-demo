@@ -1,6 +1,9 @@
 .loginLayout {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 20px 10px 20px 10px;
+  min-height: 70vh;
 }
 
 .loginArea {
@@ -17,6 +20,12 @@
   border-color: #414141;
 }
 
+.button:hover {
+  background-color: rgb(5, 191, 219);
+  color: #ffffff;
+  border-color: #414141;
+}
+
 .button:first-child {
   border-radius: 10px 0 0 0;
 }
@@ -25,9 +34,30 @@
 }
 
 .formArea {
-  padding: 10px 30px;
+  padding: 30px 30px;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-radius: 0 0 10px 10px;
+}
+
+.loginBtn {
+  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(8, 131, 149);
+  border: 0px;
+}
+
+.loginBtn:hover {
+  background-color: rgb(5, 191, 219);
+}
+
+.loginBtn:active {
+  background-color: rgb(8, 131, 149);
+}
+
+.signUpTitle {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 20px;
 }

@@ -14,7 +14,7 @@ export async function getCategories() {
       ...data[key],
     });
   }
-  // console.log(`"events:"${JSON.stringify(events)}`);
+
   return categories;
 }
 
@@ -33,7 +33,6 @@ export async function getAllPruduct() {
     });
   }
 
-  console.log(allPruduct);
   return allPruduct;
 }
 

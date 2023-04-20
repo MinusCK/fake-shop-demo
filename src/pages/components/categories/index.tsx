@@ -10,11 +10,8 @@ import { GetStaticProps } from "next";
 const Categories = (props: { categories: any }) => {
   const [openCategories, setOpenCategories] = useState(false);
   const handleOpenCategorie = () => {
-    console.log("clicked");
     setOpenCategories(!openCategories);
   };
-
-  // console.log(props.categories);
   return (
     <div className={styles.categoriesLayout}>
       <div>
