@@ -6,6 +6,7 @@ import Categories from "./components/categories";
 import useSWR from "swr";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 const fetcher = (url: string) => axios.get(url).then((res) => res.data);
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const { data, error, isLoading } = useSWR(
@@ -14,22 +15,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   );
 
   const events = [];
+  const router = useRouter();
   for (const key in data) {
     events.push({
       id: key,
       ...data[key],
     });
   }
+
+  const shouldRenderCategories =
+    router.pathname !== "/" && router.pathname !== "/login";
   return (
     <>
       <MainHeader />
       <NavBar categories={events} />
       <Row>
-        <Col md={3}>
-          <Categories categories={events} />
-        </Col>
+        {shouldRenderCategories && (
+          <Col md={3}>
+            <Categories categories={events} />
+          </Col>
+        )}
 
-        <Col>{children}</Col>
+        <Col className="childrenStyle">{children}</Col>
       </Row>
 
       <Footer />

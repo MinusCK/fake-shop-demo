@@ -1,11 +1,45 @@
-import { getAllPruduct, getCategoriesProduct } from "@/pages/api/api-util";
+import {
+  getAllPruduct,
+  getCategories,
+  getCategoriesProduct,
+} from "@/pages/api/api-util";
+import ProductCardHome from "@/pages/components/productCardHome";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { Container, Row } from "react-bootstrap";
+const CategoreDetail = (props: { filProduct: any; categorie: any }, {}) => {
+  const router = useRouter();
+  const [categorie, setCategorie] = useState("");
+  console.log(props.categorie);
 
-const CategoreDetail = (props: { filProduct: any }, {}) => {
-  // const router = useRouter();
-  // const data = router.query;
-  console.log(props.filProduct);
-  return <div>CategoreDetail</div>;
+  useEffect(() => {
+    const name = router.query.categorieId;
+    const categorieArray = props.categorie;
+    const categorieData = categorieArray.find(
+      (categorie: any) => categorie.categories === name
+    );
+    if (categorieData) {
+      setCategorie(categorieData.name);
+    } else {
+      console.log("erroe");
+    }
+  }, [categorie]);
+
+  return (
+    <Container fluid>
+      <Head>
+        <title>{categorie}</title>
+      </Head>
+      <h1>{categorie}</h1>
+      <div></div>
+      <Row>
+        {props.filProduct.map((product: any) => (
+          <ProductCardHome data={product} key={product.id} />
+        ))}
+      </Row>
+    </Container>
+  );
 };
 
 export const getStaticPaths = async () => {
@@ -33,6 +67,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: { params: any }) => {
   const categorieId = context.params.categorieId;
   const fproduct = await getCategoriesProduct(categorieId);
+  const categorie = await getCategories();
   // const products = await getAllPruduct();
   // const filterProducts = products.filter(
   //   (product: { categories: string }) => product.categories === categorieId
@@ -45,6 +80,7 @@ export const getStaticProps = async (context: { params: any }) => {
   return {
     props: {
       filProduct: fproduct,
+      categorie: categorie,
       fallback: false,
     },
   };

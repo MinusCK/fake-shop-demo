@@ -2,7 +2,7 @@
   color: rgb(255, 255, 255);
 } */
 body {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   padding: 0;
 }
 
@@ -14,7 +14,7 @@ body {
     top: 0;
     bottom: 0;
     width: calc((100% - 1400px) / 2);
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(10, 77, 104);
     z-index: -1;
   }
 

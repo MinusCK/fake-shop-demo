@@ -1,11 +1,8 @@
-.navBar {
-  background-color: rgba(121, 151, 249, 0.517);
-}
-
 .navLayout {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5 px 30px;
 }
 
 .menuPart {
@@ -20,5 +17,4 @@
 #navDropdown {
   color: white;
   font-weight: bold;
-  background-color: red;
 }

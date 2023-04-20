@@ -1,6 +1,6 @@
 .mainHeader {
   background-color: rgb(10, 77, 104);
-  padding: 5px 0;
+  padding: 5px 20px;
 }
 
 .buttonGroup {
@@ -11,11 +11,23 @@
 .eachButton {
   margin-right: 5px;
   border: 1px solid #c3c3c3;
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(166, 166, 166);
 }
 
 .eachButton:hover {
-  background-color: white;
+  background-color: rgb(93, 93, 93);
   border: 1px solid #c3c3c3;
-  color: rgb(85, 85, 85);
+  color: rgb(206, 206, 206);
+}
+
+.OffcanvasTitle {
+  background-color: rgb(10, 77, 104);
+  color: white;
+}
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #414141;
 }

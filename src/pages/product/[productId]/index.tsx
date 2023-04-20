@@ -5,15 +5,15 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import styles from "@/styles/productDetail.module.css";
 import Image from "next/image";
 import { Plus, Dash } from "react-bootstrap-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
+import Head from "next/head";
 
 const ProductDetail = ({
   selectProduct,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [quantity, setQuantity] = useState(1);
   const product = selectProduct;
-  console.log(selectProduct);
   const imgUrl = selectProduct[2][0];
   const handleAddQuantity = () => {
     setQuantity(quantity + 1);
@@ -21,9 +21,11 @@ const ProductDetail = ({
   const handleMinusQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
-
   return (
     <Container fluid>
+      <Head>
+        <title>{selectProduct[3]}</title>
+      </Head>
       <Row>
         <Col sm={12} md={6}>
           <Image
