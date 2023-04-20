@@ -4,4 +4,14 @@
 
 .cardLayout {
   flex: 1;
+  margin-bottom: 15px;
+}
+
+.cardLayout:hover {
+  background-color: rgba(130, 130, 130, 0.092);
+}
+
+.link {
+  color: white;
+  text-decoration: inherit;
 }

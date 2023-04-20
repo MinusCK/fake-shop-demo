@@ -1,9 +1,10 @@
 .categoriesLayout {
   /* min-width: 250px;
   max-width: 250px; */
-  background-color: rgb(181, 250, 250);
+  background-color: rgb(8, 131, 149);
   padding: 10px 30px;
   height: 100%;
+  color: white;
 }
 
 .searchBar {
@@ -21,6 +22,11 @@
 }
 .categoriesList > p {
   flex: 1;
+}
+
+.link {
+  color: white;
+  text-decoration: inherit;
 }
 
 @media screen and (max-width: 768px) {

@@ -14,7 +14,7 @@ const Categories = (props: { categories: any }) => {
     setOpenCategories(!openCategories);
   };
 
-  console.log(props.categories);
+  // console.log(props.categories);
   return (
     <div className={styles.categoriesLayout}>
       <div>
@@ -37,7 +37,10 @@ const Categories = (props: { categories: any }) => {
             {props.categories.map((event: any) => {
               return (
                 <div key={event.id}>
-                  <Link href={`/categorie/${event.categories}`}>
+                  <Link
+                    href={`/categorie/${event.categories}`}
+                    className={styles.link}
+                  >
                     {event.name}
                   </Link>
                 </div>
@@ -49,15 +52,5 @@ const Categories = (props: { categories: any }) => {
     </div>
   );
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const categoriesData = await getCategories();
-//   console.log(`test:${categoriesData}`);
-//   return {
-//     props: {
-//       categories: categoriesData,
-//     },
-//   };
-// };
 
 export default Categories;

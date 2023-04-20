@@ -40,3 +40,8 @@ export const getPruductDetail = async (id) => {
   const allPruduct = await getAllPruduct();
   return allPruduct.find((product) => product.id === id);
 };
+
+export const getCategoriesProduct = async (categorie) => {
+  const allPruduct = await getAllPruduct();
+  return allPruduct.filter((product) => product.categories === categorie);
+};

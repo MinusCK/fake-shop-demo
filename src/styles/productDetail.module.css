@@ -11,3 +11,30 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.button {
+  background-color: rgb(5, 191, 219);
+  border: solid rgb(12, 157, 179) 1px;
+  color: white;
+}
+
+.button:hover {
+  background-color: rgb(12, 157, 179);
+}
+
+.iconColor {
+  color: white !important;
+}
+.gap {
+  width: 50px;
+}
+.cartBtnGroup {
+  display: flex;
+}
+
+.ulStyle {
+  list-style-type: none;
+}
+.ulStyle > li {
+  line-height: 2rem;
+}

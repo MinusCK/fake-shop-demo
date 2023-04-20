@@ -3,7 +3,7 @@ import styles from "@/styles/mainHeader.module.css";
 
 export default function MainHeader() {
   return (
-    <Container fluid className={styles.mainHeader}>
+    <div className={styles.mainHeader}>
       <div className={styles.buttonGroup}>
         <Button variant="primary" size="sm" className={styles.eachButton}>
           Login
@@ -15,6 +15,6 @@ export default function MainHeader() {
           Message
         </Button>
       </div>
-    </Container>
+    </div>
   );
 }

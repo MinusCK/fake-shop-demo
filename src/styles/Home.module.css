@@ -1,0 +1,13 @@
+.homeLayout {
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productGroup {
+  margin: 15px 0;
+}
+
+.categoriesTitle {
+  font-size: 30px;
+}
